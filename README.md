@@ -6,14 +6,15 @@ Homebrew casks for my macOS menu-bar apps.
 
 ```sh
 brew tap Haddadmj/tap
+brew trust Haddadmj/tap
 brew install --cask updatebar
 ```
 
-Or in one step, without tapping first:
-
-```sh
-brew install --cask Haddadmj/tap/updatebar
-```
+The `brew trust` step is not optional. Homebrew refuses to load a cask from a
+third-party tap until you trust it, because a cask is Ruby that runs on your
+machine — it fails with *"Refusing to load cask … from untrusted tap"*
+otherwise. Read [`Casks/updatebar.rb`](Casks/updatebar.rb) first if you like;
+it is short.
 
 ## What's here
 
