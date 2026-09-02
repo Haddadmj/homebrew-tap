@@ -1,18 +1,34 @@
 # Haddadmj Tap
 
-## How do I install these formulae?
+Homebrew casks for my macOS menu-bar apps.
 
-`brew install haddadmj/tap/<formula>`
+## Install
 
-Or `brew tap haddadmj/tap` and then `brew install <formula>`.
-
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "haddadmj/tap"
-brew "<formula>"
+```sh
+brew tap Haddadmj/tap
+brew install --cask updatebar
 ```
 
-## Documentation
+Or in one step, without tapping first:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```sh
+brew install --cask Haddadmj/tap/updatebar
+```
+
+## What's here
+
+| Cask | What it is |
+|------|------------|
+| [`updatebar`](Casks/updatebar.rb) | [UpdateBar](https://github.com/Haddadmj/UpdateBar) — every pending update on your Mac, in one menu-bar badge |
+
+The apps are signed with a Developer ID and notarized by Apple, so they install
+and launch without a Gatekeeper prompt.
+
+## Releasing a new version
+
+The cask in each app's own repository is the source of truth. On a release,
+bump `version` and `sha256` there, then copy the file here:
+
+```sh
+shasum -a 256 .build/dist/UpdateBar.dmg
+```
